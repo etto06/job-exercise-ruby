@@ -1,14 +1,18 @@
-<p style="color: green"><%= notice %></p>
+<div class="container">
+  <p style="color: green"><%= notice %></p>
 
-<h1>Offers</h1>
+  <h1>Offerte di lavoro</h1>
 
-<div id="offers">
-  <% @offers.each do |offer| %>
-    <%= render offer %>
-    <p>
-      <%= link_to "Show this offer", offer %>
-    </p>
-  <% end %>
+  <div id="offers" class="row">
+    <% @offers.each do |offer| %>
+    <div class="col-4">
+        <%= render offer %>
+        <p>
+          <%= link_to "Dettagli", offer,class:'btn btn-primary w-100' %>
+        </p>
+    </div>
+    <% end %>
+  </div>
+
+  <%= link_to "nuova offerta", new_offer_path, class:'btn btn-warning w-100'%>
 </div>
-
-<%= link_to "New offer", new_offer_path %>

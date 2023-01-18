@@ -1,4 +1,7 @@
 <div id="<%= dom_id offer %>">
+  <%if offer.foto.attached? %>
+    <%= image_tag url_for(offer.foto), class:'w-100'%>
+  <%end%>
   <p>
     <strong>Rif:</strong>
     <%= offer.rif %>
